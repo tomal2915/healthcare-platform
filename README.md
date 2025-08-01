@@ -10,4 +10,4 @@ A comprehensive healthcare platform with patient portal, clinical decision suppo
 - FHIR API integration
 
 ## Getting Started
-(Add setup instructions here)" > README.md
+(Add setup instructions here)" > README.md# healthcare-platform
