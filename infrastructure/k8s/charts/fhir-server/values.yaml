@@ -1,0 +1,26 @@
+# values.yaml
+fhir:
+  image:
+    repository: hapiproject/hapi
+    tag: v5.6.0
+  compliance:
+    hipaa: true
+    auditLogging: true
+  
+resources:
+  limits:
+    cpu: 1000m
+    memory: 2Gi
+  requests:
+    cpu: 500m
+    memory: 1Gi
+
+ingress:
+  enabled: true
+  annotations:
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      more_set_headers "Strict-Transport-Security: max-age=31536000; includeSubDomains";
+  hosts:
+    - host: fhir.healthcare.example.com
+      paths: ["/"]
